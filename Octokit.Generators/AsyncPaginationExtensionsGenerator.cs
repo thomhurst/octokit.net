@@ -2,7 +2,6 @@
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using System.Data;
 using System.Text;
 
 namespace Octokit.Generators
@@ -63,7 +62,8 @@ namespace Octokit.AsyncPaginationExtension
       var enumOptions = new EnumerationOptions { RecurseSubdirectories = true };
       var paginatedCallRegex = new Regex(@".*Task<IReadOnlyList<(?<returnType>\w+)>>\s*(?<name>\w+)(?<template><.*>)?\((?<arg>.*?)(, )?ApiOptions \w*\);");
 
-      foreach (var file in Directory.EnumerateFiles(root, "I*.cs", enumOptions)) {
+      foreach (var file in Directory.EnumerateFiles(root, "I*.cs", enumOptions)) 
+      {
           var type = Path.GetFileNameWithoutExtension(file);
 
           foreach (var line in File.ReadAllLines(file)) {
