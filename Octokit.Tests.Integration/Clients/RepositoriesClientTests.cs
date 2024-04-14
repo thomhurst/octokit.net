@@ -1067,7 +1067,7 @@ public class RepositoriesClientTests
 
     public class TheGetAllPublicMethod
     {
-        [IntegrationTest(Skip = "Takes too long to run.")]
+        [IntegrationTest]
         public async Task ReturnsAllPublicRepositories()
         {
             var github = Helper.GetAuthenticatedClient();
@@ -1077,7 +1077,7 @@ public class RepositoriesClientTests
             Assert.True(repositories.Count > 80);
         }
 
-        [IntegrationTest(Skip = "Takes too long to run.")]
+        [IntegrationTest]
         public async Task ReturnsAllPublicRepositoriesSinceLastSeen()
         {
             var github = Helper.GetAuthenticatedClient();
@@ -1899,7 +1899,7 @@ public class RepositoriesClientTests
 
     public class TheGetAllTeamsMethod
     {
-        [IntegrationTest(Skip = "Test requires administration rights to access this endpoint")]
+        [IntegrationTest]
         public async Task GetsAllTeams()
         {
             var github = Helper.GetAuthenticatedClient();
@@ -1909,7 +1909,7 @@ public class RepositoriesClientTests
             Assert.NotEmpty(branches);
         }
 
-        [IntegrationTest(Skip = "Test requires administration rights to access this endpoint")]
+        [IntegrationTest]
         public async Task GetsAllTeamsWithRepositoryId()
         {
             var github = Helper.GetAuthenticatedClient();
@@ -1919,7 +1919,7 @@ public class RepositoriesClientTests
             Assert.NotEmpty(branches);
         }
 
-        [IntegrationTest(Skip = "Test requires administration rights to access this endpoint")]
+        [IntegrationTest]
         public async Task ReturnsCorrectCountOfTeamsWithoutStart()
         {
             var github = Helper.GetAuthenticatedClient();
@@ -1935,7 +1935,7 @@ public class RepositoriesClientTests
             Assert.Equal(5, teams.Count);
         }
 
-        [IntegrationTest(Skip = "Test requires administration rights to access this endpoint")]
+        [IntegrationTest]
         public async Task ReturnsCorrectCountOfTeamsWithoutStartWithRepositoryId()
         {
             var github = Helper.GetAuthenticatedClient();
@@ -1951,7 +1951,7 @@ public class RepositoriesClientTests
             Assert.Equal(5, teams.Count);
         }
 
-        [IntegrationTest(Skip = "Test requires administration rights to access this endpoint")]
+        [IntegrationTest]
         public async Task ReturnsCorrectCountOfTeamsWithStart()
         {
             var github = Helper.GetAuthenticatedClient();
@@ -1968,7 +1968,7 @@ public class RepositoriesClientTests
             Assert.Equal(5, teams.Count);
         }
 
-        [IntegrationTest(Skip = "Test requires administration rights to access this endpoint")]
+        [IntegrationTest]
         public async Task ReturnsCorrectCountOfTeamsWithStartWithRepositoryId()
         {
             var github = Helper.GetAuthenticatedClient();
@@ -1985,7 +1985,7 @@ public class RepositoriesClientTests
             Assert.Equal(5, teams.Count);
         }
 
-        [IntegrationTest(Skip = "Test requires administration rights to access this endpoint")]
+        [IntegrationTest]
         public async Task GetsPagesOfBranches()
         {
             var github = Helper.GetAuthenticatedClient();
@@ -2018,7 +2018,7 @@ public class RepositoriesClientTests
             Assert.NotEqual(firstPage[4].Name, secondPage[4].Name);
         }
 
-        [IntegrationTest(Skip = "Test requires administration rights to access this endpoint")]
+        [IntegrationTest]
         public async Task GetsPagesOfBranchesWithRepositoryId()
         {
             var github = Helper.GetAuthenticatedClient();

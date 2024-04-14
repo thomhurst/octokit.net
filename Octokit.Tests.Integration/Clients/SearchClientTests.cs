@@ -182,7 +182,7 @@ public class SearchClientTests
         Assert.NotEmpty(repos.Items);
     }
 
-    [IntegrationTest(Skip = "As this repository has been renamed, you cannot search for it's results.")]
+    [IntegrationTest]
     public async Task SearchForFileNameInCodeWithoutTerm2()
     {
         var request = new SearchCodeRequest()

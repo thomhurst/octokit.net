@@ -20,7 +20,7 @@ namespace Octokit.Tests.Integration.Reactive
                 _repositoryPagesClient = new ObservableRepositoryPagesClient(github);
             }
 
-            [IntegrationTest(Skip = "These tests require repository admin rights - see https://github.com/octokit/octokit.net/issues/1263 for discussion")]
+            [IntegrationTest]
             public async Task ReturnsAllRepositoryPagesBuilds()
             {
                 var pages = await _repositoryPagesClient.GetAll(owner, name).ToList();
@@ -28,7 +28,7 @@ namespace Octokit.Tests.Integration.Reactive
                 Assert.NotEmpty(pages);
             }
 
-            [IntegrationTest(Skip = "These tests require repository admin rights - see https://github.com/octokit/octokit.net/issues/1263 for discussion")]
+            [IntegrationTest]
             public async Task ReturnsPageOfRepositoryBuilds()
             {
                 var options = new ApiOptions

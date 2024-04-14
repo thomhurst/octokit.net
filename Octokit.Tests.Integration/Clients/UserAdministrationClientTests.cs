@@ -159,7 +159,7 @@ namespace Octokit.Tests.Integration.Clients
             }
         }
 
-        [GitHubEnterpriseTest(Skip = "Currently no way to add keys, so cant test listing keys")]
+        [GitHubEnterpriseTest]
         public async Task CanListAllPublicKeys()
         {
             // Create a disposable user for the test
@@ -179,7 +179,7 @@ namespace Octokit.Tests.Integration.Clients
             }
         }
 
-        [GitHubEnterpriseTest(Skip = "Currently no way to add keys, so cant test deleting keys")]
+        [GitHubEnterpriseTest]
         public async Task CanDeletePublicKey()
         {
             // Create a disposable user for the test

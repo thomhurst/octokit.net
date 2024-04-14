@@ -120,7 +120,7 @@ namespace Octokit.Tests.Integration.Clients
                 _github = null;
             }
 
-            [GitHubAppsTest(Skip = "Not possible to authenticate with User to Server auth")]
+            [GitHubAppsTest]
             public async Task GetsAllInstallationsForCurrentUser()
             {
                 var result = await _github.GitHubApps.GetAllInstallationsForCurrentUser();

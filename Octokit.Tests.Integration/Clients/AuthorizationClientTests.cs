@@ -72,7 +72,7 @@ namespace Octokit.Tests.Integration.Clients
             Assert.Contains("username and password Basic Auth", error.Message);
         }
 
-        [BasicAuthenticationTest(Skip = "See https://github.com/octokit/octokit.net/issues/1000 for issue to investigate this further")]
+        [BasicAuthenticationTest]
         public async Task CanCreateAndGetAuthorizationWithoutFingerPrint()
         {
             var github = Helper.GetBasicAuthClient();

@@ -31,7 +31,7 @@ namespace Octokit.Tests.Integration
 
         public class TheGetAllPublicSinceMethod
         {
-            [IntegrationTest(Skip = "This will take a very long time to return, so will skip it for now.")]
+            [IntegrationTest]
             public async Task ReturnsAllPublicReposSinceLastSeen()
             {
                 var github = Helper.GetAuthenticatedClient();

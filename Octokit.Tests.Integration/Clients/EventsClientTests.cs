@@ -308,7 +308,7 @@ namespace Octokit.Tests.Integration.Clients
                 Assert.True(_events.All(e => e.Payload != null));
             }
 
-            [IntegrationTest(Skip = "no longer able to access this event")]
+            [IntegrationTest]
             public void IssueCommentPayloadEventDeserializesCorrectly()
             {
                 var commentEvent = _events.FirstOrDefault(e => e.Id == "2628548686");
@@ -323,7 +323,7 @@ namespace Octokit.Tests.Integration.Clients
                 Assert.Equal(742, commentPayload.Issue.Number);
             }
 
-            [IntegrationTest(Skip = "no longer able to access this event")]
+            [IntegrationTest]
             public void PushEventPayloadDeserializesCorrectly()
             {
                 var pushEvent = _events.FirstOrDefault(e => e.Id == "2628858765");
@@ -332,14 +332,14 @@ namespace Octokit.Tests.Integration.Clients
                 var pushPayload = pushEvent.Payload as PushEventPayload;
                 Assert.NotNull(pushPayload);
                 Assert.NotNull(pushPayload.Commits);
-                Assert.Equal(1, pushPayload.Commits.Count);
+                Assert.Single(pushPayload.Commits);
                 Assert.Equal("3cdcba0ccbea0e6d13ae94249fbb294d71648321", pushPayload.Commits.FirstOrDefault().Sha);
                 Assert.Equal("3cdcba0ccbea0e6d13ae94249fbb294d71648321", pushPayload.Head);
                 Assert.Equal("refs/heads/release-candidate", pushPayload.Ref);
                 Assert.Equal(1, pushPayload.Size);
             }
 
-            [IntegrationTest(Skip = "no longer able to access this event")]
+            [IntegrationTest]
             public void PREventPayloadDeserializesCorrectly()
             {
                 var prEvent = _events.FirstOrDefault(e => e.Id == "2628718313");
@@ -353,7 +353,7 @@ namespace Octokit.Tests.Integration.Clients
                 Assert.Equal(743, prPayload.PullRequest.Number);
             }
 
-            [IntegrationTest(Skip = "no longer able to access this event")]
+            [IntegrationTest]
             public void PRReviewCommentEventPayloadDeserializesCorrectly()
             {
                 var prrcEvent = _events.First(e => e.Id == "2623246246");

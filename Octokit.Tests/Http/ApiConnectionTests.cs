@@ -98,7 +98,7 @@ namespace Octokit.Tests.Http
 
                 var data = await apiConnection.GetAll<object>(getAllUri);
 
-                Assert.Equal(0, data.Count);
+                Assert.Empty(data);
                 connection.Received().Get<List<object>>(getAllUri, Args.EmptyDictionary, null, CancellationToken.None, null);
             }
 
@@ -386,7 +386,7 @@ namespace Octokit.Tests.Http
                 connection.Received(3).GetResponse<IReadOnlyList<object>>(queuedOperationUrl, Args.CancellationToken);
             }
 
-            [Fact(Skip = "Test triggers deadlock when run, needs to be investigated")]
+            [Fact]
             public async Task CanCancelQueuedOperation()
             {
                 var queuedOperationUrl = new Uri("anything", UriKind.Relative);

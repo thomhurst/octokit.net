@@ -56,7 +56,7 @@ public class ReferencesClientTests : IDisposable
             () => _fixture.Get("octokit", "octokit.net", "heads/foofooblahblah"));
     }
 
-    [IntegrationTest(Skip = "This is paging for a long long time")]
+    [IntegrationTest]
     public async Task CanGetListOfReferences()
     {
         var list = await _fixture.GetAll("octokit", "octokit.net");
@@ -114,7 +114,7 @@ public class ReferencesClientTests : IDisposable
         Assert.DoesNotContain(firstRefsPage, x => secondRefsPage.Contains(x));
     }
 
-    [IntegrationTest(Skip = "This is paging for a long long time")]
+    [IntegrationTest]
     public async Task CanGetListOfReferencesWithRepositoryId()
     {
         var list = await _fixture.GetAll(7528679);

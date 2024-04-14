@@ -7,7 +7,7 @@ namespace Octokit.Tests.Integration.Clients
     {
         public class TheGetAllMethod
         {
-            [IntegrationTest(Skip = "Cannot create packages as part of this test, so can never succeed")]
+            [IntegrationTest]
             public async Task ReturnsAllPackages()
             {
                 var github = Helper.GetAuthenticatedClient();
@@ -20,7 +20,7 @@ namespace Octokit.Tests.Integration.Clients
 
         public class TheGetMethod
         {
-            [IntegrationTest(Skip = "Cannot create packages as part of this test, so can never succeed")]
+            [IntegrationTest]
             public async Task ReturnsAPackages()
             {
                 var github = Helper.GetAuthenticatedClient();
